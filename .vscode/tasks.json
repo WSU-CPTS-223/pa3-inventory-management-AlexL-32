@@ -2,17 +2,18 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "WSL: g++ build (PQ)",
+      "label": "make build",
       "type": "shell",
-      "command": "/bin/bash",
-      "args": [
-        "-c",
-        "/usr/bin/g++ -std=c++11 -Wall -Wextra -g -O0 -fno-omit-frame-pointer -fno-inline *.cpp -o build.out"
-      ],
+      "command": "make",
       "options": { "cwd": "${workspaceFolder}" },
-      "group": { "kind": "build", "isDefault": true },
-      "problemMatcher": ["$gcc"],
-      "detail": "Build all .cpp into build.out (WSL)."
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "make clean",
+      "type": "shell",
+      "command": "make clean",
+      "options": { "cwd": "${workspaceFolder}" }
     }
   ]
 }
